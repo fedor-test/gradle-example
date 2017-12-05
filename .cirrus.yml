@@ -3,5 +3,11 @@ container:
 
 check_task:
   create_fig_file_script:
-    - for n in {1..20}; do dd if=/dev/zero of=$n.bin count=1024 bs=1024 iflag=fullblock; done
+    - dd if=/dev/zero of=1.bin count=3000 bs=1048576 iflag=fullblock;
+    - dd if=/dev/zero of=2.bin count=3000 bs=1048576 iflag=fullblock;
+    - dd if=/dev/zero of=3.bin count=3000 bs=1048576 iflag=fullblock;
+    - dd if=/dev/zero of=4.bin count=3000 bs=1048576 iflag=fullblock;
+    - dd if=/dev/zero of=5.bin count=3000 bs=1048576 iflag=fullblock;
+    - dd if=/dev/zero of=6.bin count=3000 bs=1048576 iflag=fullblock;
+    - dd if=/dev/zero of=7.bin count=3000 bs=1048576 iflag=fullblock;
   script: gradle test
