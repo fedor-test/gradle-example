@@ -3,5 +3,5 @@ container:
 
 check_task:
   create_fig_file_script:
-    - for ((n=0;n<20;n++)); dd if=/dev/zero of=$n.bin count=1024 bs=1024 iflag=fullblock; done
+    - for n in {1..20}; do dd if=/dev/zero of=$n.bin count=1024 bs=1024 iflag=fullblock; done
   script: gradle test
